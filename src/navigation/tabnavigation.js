@@ -5,11 +5,13 @@ import EvilIcons from 'react-native-vector-icons/EvilIcons';
 import Feather from 'react-native-vector-icons/Feather';
 import Entypo from 'react-native-vector-icons/Entypo';
 import {InsertTab, ReportTab, CalendarTab, OtherTab} from './stacknavigation';
+import CustomBottomTabBar from './CustomTabbar';
 /*-----------Setting TabNavigation-----------*/
 const Tab = createBottomTabNavigator();
 const TabCustom = () => {
   return (
     <Tab.Navigator
+      tabBar={(props) => <CustomBottomTabBar {...props} />}
       tabBarPosition="bottom"
       tabBarOptions={{showIcon: true, labelStyle: {fontSize: 9}}}>
       <Tab.Screen

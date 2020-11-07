@@ -1,12 +1,11 @@
 import {StyleSheet} from 'react-native';
+import {BaseColor} from '../../theme';
 export const styles = StyleSheet.create({
   input: {
     marginTop: 20,
-    height: 50,
-    borderRadius: 10,
-    borderWidth: 1,
-    borderColor: 'gray',
+    height: '100%',
     marginHorizontal: 20,
+    backgroundColor: 'green',
   },
   title: {
     marginTop: -10,
@@ -18,5 +17,20 @@ export const styles = StyleSheet.create({
     marginTop: 15,
     marginLeft: 20,
     flexDirection: 'row',
+  },
+  bgrInput: {
+    backgroundColor: BaseColor.blueOpacity,
+    marginHorizontal: 5,
+    marginVertical: 5,
+    flex: 1,
+    width: '80%',
+    borderRadius: 5,
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  txtDate: {
+    fontSize: 18,
+    letterSpacing: 2,
+    fontWeight: '400',
   },
 });

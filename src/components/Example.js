@@ -35,6 +35,7 @@ export default function Example(props) {
         onPress={() => {
           setDatePickerVisibility(true);
         }}>
+        <Text>a</Text>
         <DatePicker
           dateSelect={dateSelect}
           isDatePickerVisible={isDatePickerVisible}

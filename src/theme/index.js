@@ -4,5 +4,7 @@ const BaseColor = {
   red: '#F44336',
   blue: '#42A5F5',
   white: '#FFFFFF',
+  gray: '#EEEEEE',
+  blueOpacity: '#E3F2FD',
 };
 export {BaseColor};

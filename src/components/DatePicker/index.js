@@ -11,23 +11,16 @@ export default function DatePicker(props) {
     mode,
     handleConfirm,
     hideDatePicker,
-    title,
     dateSelect,
     fomatTime,
   } = props;
   return (
-    <View style={styles.input}>
-      <Text style={styles.title}>{title}</Text>
-      <View style={styles.content}>
-        <Text style={{flex: 4}}>
-          {dateSelect === null
-            ? '-------------'
-            : moment(dateSelect).format(fomatTime)}
-        </Text>
-        <View style={{flex: 1, alignItems: 'flex-end', paddingRight: 10}}>
-          <Fontisto name="date" size={18} />
-        </View>
-      </View>
+    <View style={styles.bgrInput}>
+      <Text style={styles.txtDate}>
+        {dateSelect === null
+          ? '-------------'
+          : moment(dateSelect).format(fomatTime)}
+      </Text>
       <DateTimePickerModal
         isVisible={isDatePickerVisible}
         mode={mode}
@@ -57,5 +50,5 @@ DatePicker.defaultProps = {
   hideDatePicker: () => {},
   title: 'Tiêu đề',
   dateSelect: null,
-  fomatTime: 'DD/MM/YYYY, hh:mm:ss',
+  fomatTime: 'DD/MM/YYYY',
 };

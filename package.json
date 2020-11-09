@@ -22,6 +22,7 @@
     "prop-types": "^15.7.2",
     "react": "16.13.1",
     "react-native": "0.63.2",
+    "react-native-calendars": "^1.403.0",
     "react-native-gesture-handler": "^1.7.0",
     "react-native-i18n": "^2.0.15",
     "react-native-modal-datetime-picker": "^9.0.0",

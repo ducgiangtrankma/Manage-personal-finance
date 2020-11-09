@@ -41,7 +41,6 @@ export default function Insert({props, navigation}) {
     setIndexCatergory(index);
   };
   const renderItem = ({item, index}) => {
-    console.log(index);
     return (
       <ListCategoryItem
         item={item}

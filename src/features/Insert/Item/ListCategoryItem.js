@@ -1,9 +1,8 @@
 import React, {Component} from 'react';
 import {View, Text, StyleSheet, TouchableOpacity} from 'react-native';
-import {scWidth} from '../../../constants';
-import {BaseColor} from '../../../theme';
 import PropTypes from 'prop-types';
-const widthItem = (scWidth - 25) / 3;
+import {styles} from './styles';
+import {BaseColor} from '../../../theme';
 export default function ItemCategroy(props) {
   const {item, onPressItem, color} = props;
   return (
@@ -24,16 +23,3 @@ ItemCategroy.defaultProps = {
   onPressItem: () => {},
   color: BaseColor.red,
 };
-const styles = StyleSheet.create({
-  container: {
-    height: widthItem * 0.5,
-    width: widthItem,
-    borderColor: BaseColor.gray,
-    borderWidth: 1,
-    marginLeft: 6,
-    borderRadius: 10,
-    marginTop: 10,
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});

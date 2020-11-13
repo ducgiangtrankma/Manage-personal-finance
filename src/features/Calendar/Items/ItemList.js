@@ -1,9 +1,7 @@
-import React, {Component} from 'react';
-import {View, Text, StyleSheet} from 'react-native';
-import {BaseColor} from '../../../theme';
+import React from 'react';
+import {View, Text} from 'react-native';
 import {styles} from './styles';
 import Swipeout from 'react-native-swipeout';
-import {TouchableOpacity} from 'react-native-gesture-handler';
 export default function ItemList(props) {
   const {item, index} = props;
   const swipeSetting = {

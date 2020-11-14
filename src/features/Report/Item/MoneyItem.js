@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import {View, Text, StyleSheet} from 'react-native';
 import PropTypes from 'prop-types';
+import {scale, verticalScale} from 'react-native-size-matters';
 export default function MoneyItem(props) {
   const {title, value, containerStyle} = props;
   return (
@@ -25,9 +26,9 @@ MoneyItem.defaultProps = {
 const styles = StyleSheet.create({
   contentLine: {
     flex: 1,
-    marginRight: 3,
-    marginLeft: 5,
-    borderRadius: 10,
+    marginRight: scale(3),
+    marginLeft: scale(5),
+    borderRadius: scale(10),
     backgroundColor: 'white',
     shadowColor: '#000',
     shadowOffset: {
@@ -40,10 +41,10 @@ const styles = StyleSheet.create({
     elevation: 2,
   },
   tilte: {
-    marginTop: -8,
-    marginLeft: 20,
+    marginTop: verticalScale(-8),
+    marginLeft: scale(20),
     backgroundColor: 'white',
     fontSize: 16,
   },
-  money: {alignSelf: 'flex-start', fontSize: 18, marginLeft: 20},
+  money: {alignSelf: 'flex-start', fontSize: 18, marginLeft: scale(20)},
 });

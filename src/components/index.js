@@ -5,4 +5,14 @@ import Button from './Button';
 import DatePicker from './DatePicker';
 import TabMenu from './TabMenu';
 import PieChart from './PieChart';
-export {Header, Text, Back, Button, DatePicker, TabMenu, PieChart};
+import TextInputOutLine from './TextInputOutLine';
+export {
+  Header,
+  Text,
+  Back,
+  Button,
+  DatePicker,
+  TabMenu,
+  PieChart,
+  TextInputOutLine,
+};

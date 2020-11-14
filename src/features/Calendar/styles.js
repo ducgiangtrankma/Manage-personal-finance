@@ -1,4 +1,5 @@
 import {StyleSheet} from 'react-native';
+import {scale, verticalScale} from 'react-native-size-matters';
 import {BaseColor} from '../../theme';
 export const styles = StyleSheet.create({
   container: {
@@ -7,9 +8,9 @@ export const styles = StyleSheet.create({
   },
   content: {
     flexDirection: 'row',
-    height: 50,
+    height: verticalScale(50),
     backgroundColor: BaseColor.blueOpacity,
-    marginTop: 10,
+    marginTop: verticalScale(10),
   },
   showData: {
     flex: 1,
@@ -19,7 +20,7 @@ export const styles = StyleSheet.create({
   daySelect: {
     fontSize: 18,
     color: BaseColor.blue,
-    marginLeft: 18,
-    marginVertical: 10,
+    marginLeft: scale(18),
+    marginVertical: verticalScale(10),
   },
 });

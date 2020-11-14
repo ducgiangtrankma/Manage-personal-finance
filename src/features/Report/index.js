@@ -12,6 +12,7 @@ import {TabMenu, PieChart} from '../../components';
 import {BaseColor} from '../../theme';
 import Feather from 'react-native-vector-icons/Feather';
 import MoneyItem from './Item/MoneyItem';
+import {scale, verticalScale} from 'react-native-size-matters';
 export default function Report(props) {
   const [menuTop, setMenuTop] = useState(1);
   const [menuBottom, setMenuBottom] = useState(1);
@@ -142,27 +143,27 @@ const styles = StyleSheet.create({
   },
   header: {
     flexDirection: 'row',
-    height: 40,
-    marginBottom: 10,
+    height: verticalScale(40),
+    marginBottom: verticalScale(10),
   },
   leftHeader: {
     flex: 1,
     alignItems: 'center',
     justifyContent: 'flex-end',
-    paddingBottom: 5,
+    paddingBottom: verticalScale(5),
   },
   menu: {flex: 6},
   rightHeader: {flex: 1},
   main: {
     flex: 1,
-    marginTop: 20,
+    marginTop: verticalScale(20),
   },
   lineTop: {
-    minHeight: 45,
+    minHeight: verticalScale(45),
     width: '100%',
     marginVertical: 2,
     flexDirection: 'row',
-    marginTop: 10,
+    marginTop: verticalScale(10),
   },
   lineMonth: {
     flexDirection: 'row',
@@ -175,16 +176,16 @@ const styles = StyleSheet.create({
   centerMonth: {
     flex: 1,
     backgroundColor: BaseColor.blueOpacity,
-    borderRadius: 10,
+    borderRadius: scale(10),
     alignItems: 'center',
     justifyContent: 'center',
     flexDirection: 'row',
   },
   contentLine: {
     flex: 1,
-    marginRight: 3,
-    marginLeft: 5,
-    borderRadius: 10,
+    marginRight: scale(3),
+    marginLeft: scale(5),
+    borderRadius: scale(10),
     backgroundColor: 'white',
     shadowColor: '#000',
     shadowOffset: {
@@ -198,8 +199,8 @@ const styles = StyleSheet.create({
   },
   fullLine: {
     flex: 1,
-    marginHorizontal: 5,
-    borderRadius: 10,
+    marginHorizontal: scale(5),
+    borderRadius: scale(10),
     backgroundColor: 'white',
     shadowColor: '#000',
     shadowOffset: {

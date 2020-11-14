@@ -6,5 +6,6 @@ const BaseColor = {
   white: '#FFFFFF',
   gray: '#EEEEEE',
   blueOpacity: '#E3F2FD',
+  grayText: 'gray',
 };
 export {BaseColor};

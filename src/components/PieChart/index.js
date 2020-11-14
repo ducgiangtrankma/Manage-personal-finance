@@ -1,3 +1,4 @@
+/* eslint-disable react-native/no-inline-styles */
 import React, {Component} from 'react';
 import {View, Text, StyleSheet, FlatList, ScrollView} from 'react-native';
 import Pie from 'react-native-pie';
@@ -32,13 +33,28 @@ export default function PieChart(props) {
       );
     });
   };
+  const renderNote = () => {
+    return data.map((e) => {
+      return (
+        <View style={styles.note}>
+          <View
+            style={{width: 18, backgroundColor: e.color, borderRadius: 9}}
+          />
+          <Text style={{fontSize: 12, marginLeft: 3}}>{e.category} (20%)</Text>
+        </View>
+      );
+    });
+  };
   return (
     <ScrollView showsVerticalScrollIndicator={false} style={styles.container}>
       <View style={styles.viewChart}>
         {data.length === 0 ? (
           <Text>Không có dữ liệu</Text>
         ) : (
-          <Pie radius={80} sections={data} strokeCap={'butt'} />
+          <View style={styles.rightPie}>
+            <Pie radius={80} sections={data} strokeCap={'butt'} />
+            <View style={{justifyContent: 'center'}}>{renderNote()}</View>
+          </View>
         )}
       </View>
       <Text style={styles.title}>Biểu đồ thống kê</Text>
@@ -80,4 +96,16 @@ const styles = StyleSheet.create({
     paddingRight: 10,
   },
   title: {alignSelf: 'center', fontSize: 18, marginBottom: 20},
+  note: {
+    height: 18,
+    flexDirection: 'row',
+    marginLeft: 10,
+    marginVertical: 1,
+  },
+  rightPie: {
+    flexDirection: 'row',
+    paddingHorizontal: 20,
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
 });

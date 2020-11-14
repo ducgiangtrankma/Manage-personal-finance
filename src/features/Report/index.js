@@ -9,6 +9,9 @@ import {
   ScrollView,
 } from 'react-native';
 import {TabMenu, PieChart} from '../../components';
+import {BaseColor} from '../../theme';
+import Feather from 'react-native-vector-icons/Feather';
+import MoneyItem from './Item/MoneyItem';
 export default function Report(props) {
   const [menuTop, setMenuTop] = useState(1);
   const [menuBottom, setMenuBottom] = useState(1);
@@ -21,7 +24,7 @@ export default function Report(props) {
         <View style={styles.menu}>
           <TabMenu
             listMenu={topMenu}
-            containerStyles={styles.tabmenu}
+            //containerStyles={styles.tabmenu}
             menuId={menuTop}
             onPressMenu={(item) => {
               setMenuTop(item.id);
@@ -30,7 +33,30 @@ export default function Report(props) {
         </View>
         <View style={styles.rightHeader} />
       </View>
-      <View style={{flex: 1}} />
+      <View style={[styles.lineTop, styles.lineMonth]}>
+        <TouchableOpacity style={styles.leftMoth} onPress={() => {}}>
+          <Feather name="chevron-left" size={28} />
+        </TouchableOpacity>
+        <View style={styles.centerMonth}>
+          <Text style={{fontSize: 18, letterSpacing: 2}}>11/2020</Text>
+          <Text>(01/11 - 30/11)</Text>
+        </View>
+        <TouchableOpacity style={styles.leftMoth} onPress={() => {}}>
+          <Feather name="chevron-right" size={28} />
+        </TouchableOpacity>
+      </View>
+      <View style={[styles.lineTop, {marginTop: 20}]}>
+        <MoneyItem title="Chi tiêu" />
+        <MoneyItem title="Thu nhập" />
+      </View>
+      <View style={styles.lineTop}>
+        <View style={styles.fullLine} />
+      </View>
+      <View style={[styles.lineTop, {marginTop: 20}]}>
+        <MoneyItem title="Số dư đầu kì" />
+        <MoneyItem title="Số dư cuối kì" />
+      </View>
+      {/* <View style={{flex: 1}} /> */}
       <View style={styles.main}>
         <TabMenu
           listMenu={bottom}
@@ -75,7 +101,7 @@ const data = [
   },
   {
     id: 1,
-    percentage: 20,
+    percentage: 10,
     color: '#44CD40',
     category: 'Chi tiêu 2',
     money: '200.000',
@@ -96,7 +122,7 @@ const data = [
   },
   {
     id: 4,
-    percentage: 10,
+    percentage: 20,
     color: '#8BC2DE',
     category: 'Chi tiêu 5',
     money: '200.000',
@@ -112,10 +138,12 @@ const data = [
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    backgroundColor: 'white',
   },
   header: {
     flexDirection: 'row',
     height: 40,
+    marginBottom: 10,
   },
   leftHeader: {
     flex: 1,
@@ -126,6 +154,73 @@ const styles = StyleSheet.create({
   menu: {flex: 6},
   rightHeader: {flex: 1},
   main: {
-    flex: 2,
+    flex: 1,
+    marginTop: 20,
+  },
+  lineTop: {
+    minHeight: 45,
+    width: '100%',
+    marginVertical: 2,
+    flexDirection: 'row',
+    marginTop: 10,
+  },
+  lineMonth: {
+    flexDirection: 'row',
+  },
+  leftMoth: {
+    width: '10%',
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  centerMonth: {
+    flex: 1,
+    backgroundColor: BaseColor.blueOpacity,
+    borderRadius: 10,
+    alignItems: 'center',
+    justifyContent: 'center',
+    flexDirection: 'row',
+  },
+  contentLine: {
+    flex: 1,
+    marginRight: 3,
+    marginLeft: 5,
+    borderRadius: 10,
+    backgroundColor: 'white',
+    shadowColor: '#000',
+    shadowOffset: {
+      width: 0,
+      height: 1,
+    },
+    shadowOpacity: 0.2,
+    shadowRadius: 1.41,
+
+    elevation: 2,
+  },
+  fullLine: {
+    flex: 1,
+    marginHorizontal: 5,
+    borderRadius: 10,
+    backgroundColor: 'white',
+    shadowColor: '#000',
+    shadowOffset: {
+      width: 0,
+      height: 1,
+    },
+    shadowOpacity: 0.2,
+    shadowRadius: 1.41,
+
+    elevation: 2,
+  },
+  tabmenu: {
+    backgroundColor: 'white',
+    shadowColor: '#000',
+    shadowOffset: {
+      width: 0,
+      height: 1,
+    },
+    shadowOpacity: 0.2,
+    shadowRadius: 1.41,
+
+    elevation: 2,
   },
 });
